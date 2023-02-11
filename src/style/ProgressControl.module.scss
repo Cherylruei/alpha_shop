@@ -1,0 +1,10 @@
+.text {
+  color: red;
+  font-size: 30px;
+}
+
+.bgc {
+  background-color: rgb(38, 44, 165);
+  border: 2px solid red;
+  composes: text;
+}
