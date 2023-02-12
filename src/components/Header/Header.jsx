@@ -1,4 +1,9 @@
-import React from "react";
+import { ReactComponent as IconToggle } from "../../files/icons/toggle.svg";
+import { ReactComponent as IconSearch } from "../../files/icons/search.svg";
+import { ReactComponent as IconCart } from "../../files/icons/cart.svg";
+import { ReactComponent as IconMoon } from "../../files/icons/moon.svg";
+import { ReactComponent as IconSun } from "../../files/icons/sun.svg";
+import { ReactComponent as IconLogo } from "../../files/icons/logo.svg";
 
 const Header = () => {
   return (
@@ -8,62 +13,60 @@ const Header = () => {
         {/* <!-- navbar-toggle --> */}
         <input id="navbar-toggle" class="navbar-toggle" type="checkbox" />
         <label for="navbar-toggle" class="burger-container">
-          {/* <svg class="icon-toggle cursor-point">
-            <use xlink:href="#svg-icon-toggle"></use>
-          </svg> */}
+          <IconToggle />
         </label>
-
-        {/* <!-- navbar-menu --> */}
+        {/* 
+        <!-- navbar-menu --> */}
         <nav class="navbar-menu">
           <ul class="nav-list site-menu-list mr-auto">
             <li class="nav-item">
-              <span>男款</span>
+              <a class="nav-link" href="#">
+                男款
+              </a>
             </li>
             <li class="nav-item">
-              <span>女款</span>
+              <a class="nav-link" href="#">
+                女款
+              </a>
             </li>
             <li class="nav-item">
-              <span>最新消息</span>
+              <a class="nav-link" href="#">
+                最新消息
+              </a>
             </li>
             <li class="nav-item">
-              <span>客製商品</span>
+              <a class="nav-link" href="#">
+                客製商品
+              </a>
             </li>
             <li class="nav-item">
-              <span>聯絡我們</span>
+              <a class="nav-link" href="#">
+                聯絡我們
+              </a>
             </li>
           </ul>
           <ul class="nav-list site-action-list">
             {/* <!-- search --> */}
             <li class="nav-item">
-              {/* <svg class="nav-icon cursor-point">
-                <use xlink:href="#svg-icon-search"></use>
-              </svg> */}
+              <IconSearch />
             </li>
             {/* <!-- cart --> */}
             <li class="nav-item">
-              {/* <svg class="nav-icon cursor-point">
-                <use xlink:href="#svg-icon-cart"></use>
-              </svg> */}
+              <IconCart />
             </li>
             <li id="theme-toggle" class="nav-item">
               {/* <!-- moon --> */}
-              {/* <svg class="nav-icon cursor-point">
-                <use xlink:href="#svg-icon-moon"></use>
-              </svg> */}
+              <IconMoon />
               {/* <!-- sun --> */}
-              {/* <svg class="nav-icon cursor-point">
-                <use xlink:href="#svg-icon-sun"></use>
-              </svg> */}
+              <IconSun />
             </li>
           </ul>
         </nav>
 
         {/* <!-- logo --> */}
-        <span class="header-logo-container">
-          {/* <svg class="icon-logo cursor-point">
-            <use xlink:href="#svg-icon-logo"></use>
-          </svg> */}
-        </span>
+        <a class="header-logo-container" href="#">
+          <IconLogo />
+        </a>
       </div>
     </header>
   );
