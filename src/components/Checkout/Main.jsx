@@ -4,12 +4,12 @@ import ProgressControl from "./ProgressControl";
 
 function Main() {
   return (
-    <main>
-      <div>
+    <main className="site-main">
+      <div className="main-container">
         <Register />
         <Cart />
+        <ProgressControl />
       </div>
-      <ProgressControl />
     </main>
   );
 }

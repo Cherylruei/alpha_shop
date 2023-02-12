@@ -5,15 +5,21 @@ import Step3Payment from "./Step3Payment";
 
 function Register() {
   return (
-    <section>
-      <h1>結帳</h1>
+    <section
+      className="register-container col col-lg-6 col-sm-12"
+      data-phase="1"
+      data-total-price="0"
+    >
+      <h2 className="register-title col col-12">結帳</h2>
       <StepProgress />
       {/* 這裡要用form-container包住 step1-step3 */}
-      <form>
-        <Step1Address />
-        <Step2Delivery />
-        <Step3Payment />
-      </form>
+      <section class="form-container col col-12">
+        <form>
+          <Step1Address />
+          {/* <Step2Delivery />
+          <Step3Payment /> */}
+        </form>
+      </section>
     </section>
   );
 }

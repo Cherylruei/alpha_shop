@@ -27,7 +27,7 @@ function Step2Delivery() {
   };
   return (
     <>
-      <FormSection formTitle={"運送方式"} />
+      <FormSection dataPhase="shipping" formTitle={"運送方式"} />
       <section>
         <Shipping
           // 要設有 value，可以取出value值，來做比對選取到的selected 是否有等同於 value 值
