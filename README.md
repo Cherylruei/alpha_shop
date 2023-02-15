@@ -44,7 +44,8 @@ React 資料夾的結構如何放
 
 ### 專案環境與使用工具
 
-- node v14.16.0
-- react v18.2.0
-- sass v1.58.0
-- uuid v9.0.0
+- Node 14.16.0
+- react 18.2.0
+- react-dom 18.2.0
+- sass 1.58.0
+- uuid 9.0.0
