@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import InputField from "./InputField";
 
@@ -45,16 +44,15 @@ function Step1Address() {
     { text: "連江縣", value: "LNN" },
   ];
 
-  const [city, setCity] = useState("請選擇縣市");
   // const [inputValue, setInputValue] = useState("");
 
   // const onChange = (event) => {
   //   setInputValue(event.target.value);
   // };
-  // 問題點!!?? 為什麼不需要使用useState 去取得input 變化的值，依然可以在取得打出來的值
+
 
   let handleCityChange = (e) => {
-    setCity(e.target.value);
+    console.log(e.target.value);
   };
 
   return (

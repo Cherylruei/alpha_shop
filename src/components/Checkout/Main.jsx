@@ -1,5 +1,5 @@
 import Register from "./Register";
-import Cart from "../Cart/Cart";
+import Cart from "../Cart/Cart.jsx";
 import ProgressControl from "./ProgressControl";
 
 function Main() {

@@ -1,10 +1,10 @@
 @import "./reset.scss";
 @import "./bass.scss";
-@import "./header.scss";
-@import "./form.scss";
-@import "./register.scss";
-@import "./cart.scss";
-@import "./footer.scss";
+@import "../components/Header/header.scss";
+@import "../components/Checkout/form.scss";
+@import "../components/Checkout/register.scss";
+@import "../components/Cart/cart.scss";
+@import "../components/Footer/footer.scss";
 @import "./dark-theme.scss";
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Inter&display=swap");

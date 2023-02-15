@@ -1,4 +1,4 @@
-// import { ReactComponent as CompletedIcon } from "../../files/icons/pg-complete.svg";
+import { ReactComponent as CompletedIcon } from "../../files/icons/pg-complete.svg";
 
 function ProgressGroup({ number, steps, dataPhase }) {
   return (
@@ -6,12 +6,13 @@ function ProgressGroup({ number, steps, dataPhase }) {
       <span className="progress-icon">
         <span className="text">{number}</span>
         <div className="icon cursor-point">
-          {/* <CompletedIcon
-          title="completedIcon"
-          width={24}
-          height={24}
-          fill={"white"}
-        /> */}
+          {/* 刪掉這裡的 icon 就會出現 V 的原因? 找不到 .icon在 SCSS 的檔案用法 */}
+          <CompletedIcon
+            title="completedIcon"
+            width={24}
+            height={24}
+            fill={"white"}
+          />
         </div>
       </span>
       <span className="progress-label">{steps}</span>
