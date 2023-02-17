@@ -1,7 +1,7 @@
-import { ReactComponent as IconLogo } from "../../files/icons/logo.svg";
-import { ReactComponent as IconFacebook } from "../../files/icons/facebook.svg";
-import { ReactComponent as IconInstagram } from "../../files/icons/instagram.svg";
-import { ReactComponent as IconWhatsapp } from "../../files/icons/whatsapp.svg";
+import { ReactComponent as IconLogo } from "../../assets/icons/logo.svg";
+import { ReactComponent as IconFacebook } from "../../assets/icons/facebook.svg";
+import { ReactComponent as IconInstagram } from "../../assets/icons/instagram.svg";
+import { ReactComponent as IconWhatsapp } from "../../assets/icons/whatsapp.svg";
 
 function Footer() {
   return (

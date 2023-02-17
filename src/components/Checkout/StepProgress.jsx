@@ -1,4 +1,4 @@
-import { ReactComponent as CompletedIcon } from "../../files/icons/pg-complete.svg";
+import { ReactComponent as CompletedIcon } from "../../assets/icons/pg-complete.svg";
 
 function ProgressGroup({ number, steps, dataPhase }) {
   return (

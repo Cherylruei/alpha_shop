@@ -1,6 +1,6 @@
 import React from "react";
-import { ReactComponent as RightArrow } from "../../files/icons/right-arrow.svg";
-import { ReactComponent as LeftArrow } from "../../files/icons/left-arrow.svg";
+import { ReactComponent as RightArrow } from "../../assets/icons/right-arrow.svg";
+import { ReactComponent as LeftArrow } from "../../assets/icons/left-arrow.svg";
 
 function ButtonGroup({ buttonClassName, stepProgress, children }) {
   return (
