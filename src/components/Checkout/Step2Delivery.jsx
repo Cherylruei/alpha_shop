@@ -26,31 +26,28 @@ function Step2Delivery() {
     setSelected(event.target.value);
   };
   return (
-    <>
-      <FormSection dataPhase="shipping" formTitle={"運送方式"} />
-      <section>
-        <Shipping
-          // 要設有 value，可以取出value值，來做比對選取到的selected 是否有等同於 value 值
-          // 決定 checked 是 true or false
-          value="standard"
-          dataPrice="免費"
-          dataId="shipping-standard"
-          option="標準運送"
-          shippingDays="約 3~7 個工作天"
-          checked={selected === "standard"}
-          onChange={handleChange}
-        />
-        <Shipping
-          value="dhl"
-          dataPrice="500"
-          dataId="shipping-dhl"
-          option="DHL 貨運"
-          shippingDays="48 小時內送達"
-          checked={selected === "dhl"}
-          onChange={handleChange}
-        />
-      </section>
-    </>
+    <FormSection dataPhase="shipping" formTitle={"運送方式"}>
+      <Shipping
+        // 要設有 value，可以取出value值，來做比對選取到的selected 是否有等同於 value 值
+        // 決定 checked 是 true or false
+        value="standard"
+        dataPrice="免費"
+        dataId="shipping-standard"
+        option="標準運送"
+        shippingDays="約 3~7 個工作天"
+        checked={selected === "standard"}
+        onChange={handleChange}
+      />
+      <Shipping
+        value="dhl"
+        dataPrice="500"
+        dataId="shipping-dhl"
+        option="DHL 貨運"
+        shippingDays="48 小時內送達"
+        checked={selected === "dhl"}
+        onChange={handleChange}
+      />
+    </FormSection>
   );
 }
 

@@ -12,13 +12,10 @@ function Register() {
     >
       <h2 className="register-title col col-12">結帳</h2>
       <StepProgress />
-      {/* 這裡要用form-container包住 step1-step3 */}
       <section class="form-container col col-12">
-        <form>
-          <Step1Address />
-          {/* <Step2Delivery />
-          <Step3Payment /> */}
-        </form>
+        <Step1Address />
+        <Step2Delivery />
+        <Step3Payment />
       </section>
     </section>
   );

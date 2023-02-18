@@ -5,15 +5,14 @@ function ProgressGroup({ number, steps, dataPhase }) {
     <span className="progress-group" data-phase={dataPhase}>
       <span className="progress-icon">
         <span className="text">{number}</span>
-        <div className="icon cursor-point">
-          {/* 刪掉這裡的 icon 就會出現 V 的原因? 找不到 .icon在 SCSS 的檔案用法 */}
-          <CompletedIcon
-            title="completedIcon"
-            width={24}
-            height={24}
-            fill={"white"}
-          />
-        </div>
+        {/* 刪掉這裡的 icon 就會出現 V 的原因? 找不到 .icon在 SCSS 的檔案用法 */}
+        <CompletedIcon
+          title="completedIcon"
+          width={24}
+          height={24}
+          fill={"white"}
+          className="icon cursor-point"
+        />
       </span>
       <span className="progress-label">{steps}</span>
     </span>

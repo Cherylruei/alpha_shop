@@ -50,62 +50,59 @@ function Step1Address() {
   //   setInputValue(event.target.value);
   // };
 
-
   let handleCityChange = (e) => {
     console.log(e.target.value);
   };
 
   return (
-    <section className="form-container col col-12">
-      <FormSection dataPhase="address" formTitle={"寄件資訊"}>
-        <div className="col col-12">
-          <div className="input-group input-w-lg-2 input-w-sm-s1">
-            <div className="input-label">稱謂</div>
-            <div className="select-container">
-              <select name="selectedTitle">
-                <option value="mr">先生</option>
-                <option value="ms">女士</option>
-                <option value="mx">不限</option>
-              </select>
-            </div>
-          </div>
-          <div class="input-group input-w-lg-4 input-w-sm-s2">
-            <InputField label="姓名" type="text" placeholder="請輸入姓名" />
+    <FormSection dataPhase="address" formTitle={"寄送地址"}>
+      <div className="col col-12">
+        <div className="input-group input-w-lg-2 input-w-sm-s1">
+          <div className="input-label">稱謂</div>
+          <div className="select-container">
+            <select name="selectedTitle">
+              <option value="mr">先生</option>
+              <option value="ms">女士</option>
+              <option value="mx">不限</option>
+            </select>
           </div>
         </div>
-        <div className="col col-12">
-          <div class="input-group input-w-lg-3 input-w-sm-full">
-            <InputField label="電話" type="tel" placeholder="請輸入行動電話" />
-          </div>
-          <div class="input-group input-w-lg-3 input-w-sm-full">
-            <InputField
-              label="Email"
-              type="email"
-              placeholder="請輸入電子郵件"
-              className="input-group input-w-lg-3 input-w-sm-full"
-            />
+        <div class="input-group input-w-lg-4 input-w-sm-s2">
+          <InputField label="姓名" type="text" placeholder="請輸入姓名" />
+        </div>
+      </div>
+      <div className="col col-12">
+        <div class="input-group input-w-lg-3 input-w-sm-full">
+          <InputField label="電話" type="tel" placeholder="請輸入行動電話" />
+        </div>
+        <div class="input-group input-w-lg-3 input-w-sm-full">
+          <InputField
+            label="Email"
+            type="email"
+            placeholder="請輸入電子郵件"
+            className="input-group input-w-lg-3 input-w-sm-full"
+          />
+        </div>
+      </div>
+      <div className="col col-12">
+        <div className="input-group input-w-lg-2 input-w-sm-full">
+          <div className="input-label">縣市 </div>
+          <div className="select-container">
+            <select onChange={handleCityChange} required>
+              <option value="">請選擇縣市</option>
+              {cities.map((city) => (
+                <option key={uuidv4()} value={city.value}>
+                  {city.text}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
-        <div className="col col-12">
-          <div className="input-group input-w-lg-2 input-w-sm-full">
-            <div className="input-label">縣市 </div>
-            <div className="select-container">
-              <select onChange={handleCityChange} required>
-                <option value="">請選擇縣市</option>
-                {cities.map((city) => (
-                  <option key={uuidv4()} value={city.value}>
-                    {city.text}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
-          <div className="input-group input-w-lg-4 input-w-sm-full">
-            <InputField label="地址" type="text" placeholder="請輸入地址" />
-          </div>
+        <div className="input-group input-w-lg-4 input-w-sm-full">
+          <InputField label="地址" type="text" placeholder="請輸入地址" />
         </div>
-      </FormSection>
-    </section>
+      </div>
+    </FormSection>
   );
 }
 
