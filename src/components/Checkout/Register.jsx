@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import StepProgress from "./StepProgress";
 import Step1Address from "./Step1Address";
 import Step2Delivery from "./Step2Delivery";

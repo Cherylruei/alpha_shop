@@ -14,18 +14,13 @@ function Main() {
     setShipping(price);
   };
 
-  // const handleMinusClick = (item) => {
-  //   setShipping(item);
-  // };
-
-  // const handlePlusClick = (item) => {
-  //   setShipping(item);
-  // };
+  const handleQuantityChange = (item) => {
+    console.log("item", item);
+    setCartProducts(item);
+  };
 
   function handlePhaseClick(e) {
     const btnControl = e.target.parentElement.dataset.phase;
-    console.log(btnControl); // 顯示父元素 section 出現的 phase
-    console.log(e.target.className); // 利用 className prev & next 來操控往上往下
     // 若是 className = next, 來判斷phase在哪一個步驟，應該改成什麼phase, number 也要跟著加
     if (e.target.className === "next") {
       if (btnControl === "address") {
@@ -53,36 +48,36 @@ function Main() {
   }
 
   // 以下嘗試將邏輯放在父元素傳下去，失敗
-  const handleMinusClick = (clickedItem) => {
-    console.log("clickedItem", clickedItem);
-    setCartProducts((prevCartProducts) => {
-      return prevCartProducts.map((item) => {
-        if (item.id === clickedItem.id) {
-          return {
-            ...item,
-            item: item.quantity - 1,
-          };
-        } else {
-          return item;
-        }
-      });
-    });
-  };
+  // const handleMinusClick = (clickedItem) => {
+  //   console.log("clickedItem", clickedItem);
+  //   setCartProducts((prevCartProducts) => {
+  //     return prevCartProducts.map((item) => {
+  //       if (item.id === clickedItem.id) {
+  //         return {
+  //           ...item,
+  //           item: item.quantity - 1,
+  //         };
+  //       } else {
+  //         return item;
+  //       }
+  //     });
+  //   });
+  // };
 
-  const handlePlusClick = (clickedItem) => {
-    setCartProducts((prevCartProducts) => {
-      return prevCartProducts.map((item) => {
-        if (item.id === clickedItem.id) {
-          return {
-            ...item,
-            item: item.quantity + 1,
-          };
-        } else {
-          return item;
-        }
-      });
-    });
-  };
+  // const handlePlusClick = (clickedItem) => {
+  //   setCartProducts((prevCartProducts) => {
+  //     return prevCartProducts.map((item) => {
+  //       if (item.id === clickedItem.id) {
+  //         return {
+  //           ...item,
+  //           item: item.quantity + 1,
+  //         };
+  //       } else {
+  //         return item;
+  //       }
+  //     });
+  //   });
+  // };
 
   return (
     <main className="site-main">
@@ -97,8 +92,7 @@ function Main() {
         <Cart
           cartProducts={cartProducts}
           shipping={shipping}
-          onManageMinus={handleMinusClick}
-          onManagePlus={handlePlusClick}
+          onManageQty={handleQuantityChange}
         />
         {/* Cart 的購物車金額加上運費 button(onClick)*/}
         <ProgressControl

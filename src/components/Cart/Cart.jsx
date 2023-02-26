@@ -1,4 +1,3 @@
-// import data from "./cart.json";
 import CartItem from "./CartItem";
 
 function CartInfo({ title, price }) {
@@ -10,15 +9,14 @@ function CartInfo({ title, price }) {
   );
 }
 
-function Cart({ cartProducts, shipping, onManageMinus, onManagePlus }) {
-  console.log("cartProducts", cartProducts);
+function Cart({ cartProducts, shipping, onManageQty }) {
+  // console.log("cartProducts", cartProducts);
   const listItems = cartProducts.map((item) => (
     <CartItem
       key={item.id}
       item={item}
       // 修改傳入整個item 物件至 CartItem, 看起來比較簡潔
-      onManageMinus={onManageMinus}
-      onManagePlus={onManagePlus}
+      onManageQty={onManageQty}
     />
   ));
   return (
