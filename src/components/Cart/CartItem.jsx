@@ -1,27 +1,37 @@
 import { ReactComponent as MinusIcon } from "../../assets/icons/minus.svg";
 import { ReactComponent as PlusIcon } from "../../assets/icons/plus.svg";
 
-// import { isAccordionItemSelected } from "react-bootstrap/esm/AccordionContext";
-
-function CartItem({ quantity, price, img, name }) {
-  //按 data的原始資料作命名
+function CartItem({ item, onManageMinus, onManagePlus }) {
+  console.log(item);
+  console.log("onManageMinus", onManageMinus);
+  console.log("onManagePlus", onManagePlus);
   return (
     <div
       className="product-container col col-12"
-      data-count={quantity}
-      data-price={price}
+      data-count={item.quantity}
+      data-price={item.price}
     >
-      <img src={img} alt="product1" className="img-container" />
+      <img src={item.img} alt="product1" className="img-container" />
       <div className="product-info">
-        <div className="product-name">{name}</div>
+        <div className="product-name">{item.name}</div>
         <div className="product-control-container">
           <div className="product-control">
-            <MinusIcon title="MinusIcon" fill={"white"} />
-            <span class="product-count">{quantity}</span>
-            <PlusIcon title="PlusIcon" fill={"white"} />
+            <MinusIcon
+              title="MinusIcon"
+              fill={"white"}
+              className="product-action minus"
+              onClick={onManageMinus}
+            />
+            <span class="product-count">{item.quantity}</span>
+            <PlusIcon
+              title="PlusIcon"
+              fill={"white"}
+              className="product-action plus"
+              onClick={onManagePlus}
+            />
           </div>
         </div>
-        <div class="price">${price}</div>
+        <div class="price">${item.price}</div>
       </div>
     </div>
   );
