@@ -10,17 +10,13 @@ function CartInfo({ title, price }) {
 }
 
 function Cart({ cartProducts, shipping, onManageQty }) {
-  if (shipping === "免費") {
-    shipping = 0;
-  }
-  // 免費轉成數字可以加總總額
   const productsPrice = cartProducts.reduce((p, c) => {
     // console.log("previous", p);
     // console.log("current", c);
     return p + c.price * c.quantity;
   }, 0);
   // 上面將購物車的產品金額加總
-  const totalPrice = productsPrice + shipping;
+  const totalPrice = shipping === 500 ? 500 + productsPrice : 0 + productsPrice;
   // 宣告totalPrice 加上 shipping 運費，放在小計
   return (
     <section className="cart-container col col-lg-5 col-sm-12">

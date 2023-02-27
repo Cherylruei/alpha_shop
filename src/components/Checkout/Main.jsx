@@ -5,7 +5,7 @@ import ProgressControl from "./ProgressControl";
 import cartInitData from "../Cart/cart.json";
 
 function Main() {
-  const [shipping, setShipping] = useState(0);
+  const [shipping, setShipping] = useState("免費");
   const [cartProducts, setCartProducts] = useState(cartInitData);
   const [phase, setPhase] = useState("address");
   const [number, setNumber] = useState(1);
@@ -48,13 +48,12 @@ function Main() {
     }
   }
 
-
   return (
     <main className="site-main">
       <div className="main-container">
         <Register
           onManageRadio={handleRadioChange}
-          phase={phase}
+          // phase={phase}
           number={number}
         />
         {/* Register 裡有 Step 2 Delivery 需要確認是否要計算運費, radio (onClick) */}
