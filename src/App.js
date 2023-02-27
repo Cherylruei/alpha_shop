@@ -5,11 +5,11 @@ import "./style/main.scss";
 
 function App() {
   return (
-    <body>
+    <div>
       <Header />
       <Main />
       <Footer />
-    </body>
+    </div>
   );
 }
 

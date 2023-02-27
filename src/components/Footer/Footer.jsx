@@ -5,61 +5,61 @@ import { ReactComponent as IconWhatsapp } from "../../assets/icons/whatsapp.svg"
 
 function Footer() {
   return (
-    <footer class="site-footer">
-      <div class="footer-container">
-        <div class="footer-logo-container">
+    <footer className="site-footer">
+      <div className="footer-container">
+        <div className="footer-logo-container">
           <IconLogo />
         </div>
-        <section class="footer-section">
-          <h2 class="section-title">客戶服務</h2>
-          <div class="section-content">
-            <a class="page-link" href="#">
+        <section className="footer-section">
+          <h2 className="section-title">客戶服務</h2>
+          <div className="section-content">
+            <a className="page-link" href="#">
               運送說明
             </a>
-            <a class="page-link" href="#">
+            <a className="page-link" href="#">
               退換貨相關
             </a>
-            <a class="page-link" href="#">
+            <a className="page-link" href="#">
               付款資訊
             </a>
-            <a class="page-link" href="#">
+            <a className="page-link" href="#">
               FAQ
             </a>
           </div>
         </section>
-        <section class="footer-section">
-          <h2 class="section-title">關於我們</h2>
-          <div class="section-content">
-            <a class="page-link" href="#">
+        <section className="footer-section">
+          <h2 className="section-title">關於我們</h2>
+          <div className="section-content">
+            <a className="page-link" href="#">
               品牌故事
             </a>
-            <a class="page-link" href="#">
+            <a className="page-link" href="#">
               媒體聯繫
             </a>
-            <a class="page-link" href="#">
+            <a className="page-link" href="#">
               Press kit
             </a>
           </div>
         </section>
-        <section class="footer-section">
-          <h2 class="section-title">資訊</h2>
-          <div class="section-content">
-            <a class="page-link" href="#">
+        <section className="footer-section">
+          <h2 className="section-title">資訊</h2>
+          <div className="section-content">
+            <a className="page-link" href="#">
               隱私權政策
             </a>
-            <a class="page-link" href="#">
+            <a className="page-link" href="#">
               Cookie
             </a>
-            <a class="page-link" href="#">
+            <a className="page-link" href="#">
               GDPR
             </a>
           </div>
         </section>
-        <section class="footer-section">
-          <h2 class="section-title">追蹤 ALPHA Shop</h2>
-          <div class="section-content">
-            <div class="tel-info">+886 02123-45678</div>
-            <div class="social-icon-group">
+        <section className="footer-section">
+          <h2 className="section-title">追蹤 ALPHA Shop</h2>
+          <div className="section-content">
+            <div className="tel-info">+886 02123-45678</div>
+            <div className="social-icon-group">
               <IconFacebook />
               <IconInstagram />
               <IconWhatsapp />

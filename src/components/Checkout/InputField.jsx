@@ -1,12 +1,4 @@
-function InputField({
-  value,
-  label,
-  name,
-  placeholder,
-  type,
-  onChange,
-  className,
-}) {
+function InputField({ value, label, name, placeholder, type, onChange }) {
   return (
     <>
       {/* 待改寫CSS */}

@@ -8,53 +8,53 @@ import { ReactComponent as IconLogo } from "../../assets/icons/logo.svg";
 const Header = () => {
   return (
     // <!-- header -->
-    <header class="site-header">
-      <div class="header-container mx-auto">
+    <header className="site-header">
+      <div className="header-container mx-auto">
         {/* <!-- navbar-toggle --> */}
-        <input id="navbar-toggle" class="navbar-toggle" type="checkbox" />
-        <label for="navbar-toggle" class="burger-container">
+        <input id="navbar-toggle" className="navbar-toggle" type="checkbox" />
+        <label htmlFor="navbar-toggle" className="burger-container">
           <IconToggle />
         </label>
         {/* 
         <!-- navbar-menu --> */}
-        <nav class="navbar-menu">
-          <ul class="nav-list site-menu-list mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#">
+        <nav className="navbar-menu">
+          <ul className="nav-list site-menu-list mr-auto">
+            <li className="nav-item">
+              <a className="nav-link" href="#">
                 男款
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
+            <li className="nav-item">
+              <a className="nav-link" href="#">
                 女款
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
+            <li className="nav-item">
+              <a className="nav-link" href="#">
                 最新消息
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
+            <li className="nav-item">
+              <a className="nav-link" href="#">
                 客製商品
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
+            <li className="nav-item">
+              <a className="nav-link" href="#">
                 聯絡我們
               </a>
             </li>
           </ul>
-          <ul class="nav-list site-action-list">
+          <ul className="nav-list site-action-list">
             {/* <!-- search --> */}
-            <li class="nav-item">
+            <li className="nav-item">
               <IconSearch />
             </li>
             {/* <!-- cart --> */}
-            <li class="nav-item">
+            <li className="nav-item">
               <IconCart />
             </li>
-            <li id="theme-toggle" class="nav-item">
+            <li id="theme-toggle" className="nav-item">
               {/* <!-- moon --> */}
               <IconMoon />
               {/* <!-- sun --> */}
@@ -64,7 +64,7 @@ const Header = () => {
         </nav>
 
         {/* <!-- logo --> */}
-        <a class="header-logo-container" href="#">
+        <a className="header-logo-container" href="#">
           <IconLogo />
         </a>
       </div>

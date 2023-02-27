@@ -15,17 +15,18 @@ function Main() {
   };
 
   const handleQuantityChange = (item) => {
-    console.log("item", item);
     setCartProducts(item);
   };
 
   function handlePhaseClick(e) {
     const btnControl = e.target.parentElement.dataset.phase;
+    console.log("btnControl", e.target.parentElement);
     // 若是 className = next, 來判斷phase在哪一個步驟，應該改成什麼phase, number 也要跟著加
     if (e.target.className === "next") {
       if (btnControl === "address") {
         setPhase("shipping");
-      } else if (btnControl === "shipping") {
+      }
+      if (btnControl === "shipping") {
         setPhase("credit-card");
       }
       // phase 往下一步，number + 1
@@ -40,50 +41,18 @@ function Main() {
       } else if (btnControl === "credit-card") {
         setPhase("shipping");
       }
+      // phase 往前退上一步, number - 1
+      setNumber((n) => n - 1);
+      console.log("number", number);
+      return;
     }
-    // phase 往前退上一步, number - 1
-    setNumber((n) => n - 1);
-    console.log("number", number);
-    return;
   }
 
-  // 以下嘗試將邏輯放在父元素傳下去，失敗
-  // const handleMinusClick = (clickedItem) => {
-  //   console.log("clickedItem", clickedItem);
-  //   setCartProducts((prevCartProducts) => {
-  //     return prevCartProducts.map((item) => {
-  //       if (item.id === clickedItem.id) {
-  //         return {
-  //           ...item,
-  //           item: item.quantity - 1,
-  //         };
-  //       } else {
-  //         return item;
-  //       }
-  //     });
-  //   });
-  // };
-
-  // const handlePlusClick = (clickedItem) => {
-  //   setCartProducts((prevCartProducts) => {
-  //     return prevCartProducts.map((item) => {
-  //       if (item.id === clickedItem.id) {
-  //         return {
-  //           ...item,
-  //           item: item.quantity + 1,
-  //         };
-  //       } else {
-  //         return item;
-  //       }
-  //     });
-  //   });
-  // };
 
   return (
     <main className="site-main">
       <div className="main-container">
         <Register
-          shipping={shipping}
           onManageRadio={handleRadioChange}
           phase={phase}
           number={number}

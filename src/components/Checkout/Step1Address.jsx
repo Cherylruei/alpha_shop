@@ -44,12 +44,6 @@ function Step1Address() {
     { text: "連江縣", value: "LNN" },
   ];
 
-  // const [inputValue, setInputValue] = useState("");
-
-  // const onChange = (event) => {
-  //   setInputValue(event.target.value);
-  // };
-
   let handleCityChange = (e) => {
     console.log(e.target.value);
   };
@@ -67,12 +61,12 @@ function Step1Address() {
             </select>
           </div>
         </div>
-        <div class="input-group input-w-lg-4 input-w-sm-s2">
+        <div className="input-group input-w-lg-4 input-w-sm-s2">
           <InputField label="姓名" type="text" placeholder="請輸入姓名" />
         </div>
       </div>
       <div className="col col-12">
-        <div class="input-group input-w-lg-3 input-w-sm-full">
+        <div className="input-group input-w-lg-3 input-w-sm-full">
           <InputField label="電話" type="tel" placeholder="請輸入行動電話" />
         </div>
         <div class="input-group input-w-lg-3 input-w-sm-full">
