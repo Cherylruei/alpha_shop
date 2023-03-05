@@ -3,6 +3,7 @@ import Register from "./Register";
 import Cart from "../Cart/Cart.jsx";
 import ProgressControl from "./ProgressControl";
 import cartInitData from "../Cart/cart.json";
+import { DummyDataContext } from "../../context/CartContext";
 
 function Main() {
   const [shipping, setShipping] = useState("免費");
@@ -57,11 +58,9 @@ function Main() {
           number={number}
         />
         {/* Register 裡有 Step 2 Delivery 需要確認是否要計算運費, radio (onClick) */}
-        <Cart
-          cartProducts={cartProducts}
-          shipping={shipping}
-          onManageQty={handleQuantityChange}
-        />
+        <DummyDataContext.Provider value={cartProducts}>
+          <Cart shipping={shipping} onManageQty={handleQuantityChange} />
+        </DummyDataContext.Provider>
         {/* Cart 的購物車金額加上運費 button(onClick)*/}
         <ProgressControl
           phase={phase}
