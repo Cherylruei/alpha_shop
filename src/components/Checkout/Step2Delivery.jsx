@@ -1,7 +1,6 @@
 import { FormSection } from "./Step1Address";
 
 function Shipping({ dataPrice, dataId, option, shippingDays, onManageRadio }) {
-  console.log(dataPrice);
   return (
     <label className="radio-group col col-12" data-price={dataPrice}>
       <input
