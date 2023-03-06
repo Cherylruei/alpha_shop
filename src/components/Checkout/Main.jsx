@@ -3,7 +3,7 @@ import Register from "./Register";
 import Cart from "../Cart/Cart.jsx";
 import ProgressControl from "./ProgressControl";
 import cartInitData from "../Cart/cart.json";
-import { DummyDataContext } from "../../context/CartContext";
+import { ShoppingCartContext } from "../../context/CartContext";
 import { CardDataContext, creditCardInfo } from "../../context/DataContext";
 
 function Main() {
@@ -21,9 +21,21 @@ function Main() {
     setCartProducts(item);
   };
 
+  const productsPrice = cartProducts.reduce((p, c) => {
+    // console.log("previous", p);
+    // console.log("current", c);
+    return p + c.price * c.quantity;
+  }, 0);
+  // 上面將購物車的產品金額加總
+  const totalPrice = shipping === 500 ? 500 + productsPrice : 0 + productsPrice;
+  // 宣告totalPrice 加上 shipping 運費，放在小計
+
+  const cartContextValue = { cartProducts, totalPrice };
+  // 等同於 {cartProducts: cartProducts, totalPrice: totalPrice}
+
   function handlePhaseClick(e) {
     const btnControl = e.target.parentElement.dataset.phase;
-    console.log("btnControl", e.target.parentElement);
+    // console.log("btnControl", e.target.parentElement);
     // 若是 className = next, 來判斷phase在哪一個步驟，應該改成什麼phase, number 也要跟著加
     if (e.target.className === "next") {
       if (btnControl === "address") {
@@ -55,22 +67,26 @@ function Main() {
     <main className="site-main">
       <div className="main-container">
         <CardDataContext.Provider value={{ cardData, setCardData }}>
-          <Register
-            onManageRadio={handleRadioChange}
-            // phase={phase}
-            number={number}
-          />
-          {/* Register 裡有 Step 2 Delivery 需要確認是否要計算運費, radio (onClick) */}
-          <DummyDataContext.Provider value={cartProducts}>
-            <Cart shipping={shipping} onManageQty={handleQuantityChange} />
-          </DummyDataContext.Provider>
-          {/* Cart 的購物車金額加上運費 button(onClick)*/}
-          <ProgressControl
-            phase={phase}
-            number={number}
-            onClick={handlePhaseClick}
-          />
-          {/* 會記錄不同階段 step 1/2/3 將相對應的prop傳到 register */}
+          <ShoppingCartContext.Provider value={cartContextValue}>
+            <Register
+              onManageRadio={handleRadioChange}
+              // phase={phase}
+              number={number}
+            />
+            {/* Register 裡有 Step 2 Delivery 需要確認是否要計算運費, radio (onClick) */}
+            <Cart
+              shipping={shipping}
+              onManageQty={handleQuantityChange}
+              totalPrice={totalPrice}
+            />
+            {/* Cart 的購物車金額加上運費 button(onClick)*/}
+            <ProgressControl
+              phase={phase}
+              number={number}
+              onClick={handlePhaseClick}
+            />
+            {/* 會記錄不同階段 step 1/2/3 將相對應的prop傳到 register */}
+          </ShoppingCartContext.Provider>
         </CardDataContext.Provider>
       </div>
     </main>

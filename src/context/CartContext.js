@@ -17,4 +17,6 @@ const dummyData = [
   },
 ];
 
-export const DummyDataContext = createContext(dummyData);
+export const ShoppingCartContext = createContext(dummyData);
+
+

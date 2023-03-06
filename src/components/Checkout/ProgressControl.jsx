@@ -1,6 +1,9 @@
 import React from "react";
 import { ReactComponent as RightArrow } from "../../assets/icons/right-arrow.svg";
 import { ReactComponent as LeftArrow } from "../../assets/icons/left-arrow.svg";
+import { useContext } from "react";
+import { ShoppingCartContext } from "../../context/CartContext";
+import { CardDataContext } from "../../context/DataContext";
 
 function NextButton({ onClick }) {
   return (
@@ -24,6 +27,16 @@ function PrevButton({ onClick }) {
 
 function ProgressControl({ number, phase, onClick }) {
   // console.log("progressControl-phase", phase);
+  const { cardData } = useContext(CardDataContext);
+  // cardData 是 物件
+  const totalPrice = useContext(ShoppingCartContext).totalPrice;
+  // shoppingList 是 陣列包著商品購物車物件
+
+  const handleOrderDetails = (e) => {
+    console.log("paymentInformation", cardData);
+    console.log(`總共金額為 ${totalPrice} 元`);
+  };
+
   return (
     <section class="progress-control-container col col-lg-6 col-sm-12">
       <section class="button-group col col-12" data-phase={phase}>
@@ -31,7 +44,9 @@ function ProgressControl({ number, phase, onClick }) {
         {number < 3 ? (
           <NextButton onClick={onClick} />
         ) : (
-          <button className="next">確認下單</button>
+          <button className="next" onClick={handleOrderDetails}>
+            確認下單
+          </button>
         )}
       </section>
     </section>

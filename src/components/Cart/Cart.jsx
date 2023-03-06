@@ -1,6 +1,4 @@
 import CartItems from "./CartItems";
-import { useContext } from "react";
-import { DummyDataContext } from "../../context/CartContext.js";
 
 function CartInfo({ title, price }) {
   return (
@@ -11,22 +9,19 @@ function CartInfo({ title, price }) {
   );
 }
 
-function Cart({ shipping, onManageQty }) {
-  const cartProducts = useContext(DummyDataContext);
-  const productsPrice = cartProducts.reduce((p, c) => {
-    // console.log("previous", p);
-    // console.log("current", c);
-    return p + c.price * c.quantity;
-  }, 0);
-  // 上面將購物車的產品金額加總
-  const totalPrice = shipping === 500 ? 500 + productsPrice : 0 + productsPrice;
-  // 宣告totalPrice 加上 shipping 運費，放在小計
+function Cart({ shipping, onManageQty, totalPrice }) {
+  // const productsPrice = cartProducts.reduce((p, c) => {
+  //   // console.log("previous", p);
+  //   // console.log("current", c);
+  //   return p + c.price * c.quantity;
+  // }, 0);
+  // // 上面將購物車的產品金額加總
+  // const totalPrice = shipping === 500 ? 500 + productsPrice : 0 + productsPrice;
+  // // 宣告totalPrice 加上 shipping 運費，放在小計
   return (
     <section className="cart-container col col-lg-5 col-sm-12">
       <h3 className="cart-title">購物籃</h3>
-      <DummyDataContext.Provider value={cartProducts}>
-        <CartItems cartProducts={cartProducts} onManageQty={onManageQty} />
-      </DummyDataContext.Provider>
+      <CartItems onManageQty={onManageQty} />
       <CartInfo title="運費" price={shipping} />
       <CartInfo title="小計" price={`$${totalPrice}`} />
     </section>

@@ -1,10 +1,10 @@
 import { ReactComponent as MinusIcon } from "../../assets/icons/minus.svg";
 import { ReactComponent as PlusIcon } from "../../assets/icons/plus.svg";
 import { useContext } from "react";
-import { DummyDataContext } from "../../context/CartContext.js";
+import { ShoppingCartContext } from "../../context/CartContext.js";
 
 function CartItems({ onManageQty }) {
-  const cartProducts = useContext(DummyDataContext);
+  const cartProducts = useContext(ShoppingCartContext).cartProducts;
   function handleQuantityClick(e) {
     const targetId = e.target.closest(".product-container").id;
     const isMinus = e.target.parentElement.classList.contains("minus");

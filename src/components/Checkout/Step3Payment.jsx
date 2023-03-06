@@ -5,6 +5,8 @@ import { CardDataContext } from "../../context/DataContext";
 
 function Step3Payment() {
   const { cardData, setCardData } = useContext(CardDataContext);
+  // 為什麼是用 { } 包著 cardData 和 setCardData? 相等於 {cardData: cardData, setCardData: setCardData}
+
   function handleInputValue(e) {
     setCardData({
       ...cardData,
@@ -12,7 +14,7 @@ function Step3Payment() {
     });
   }
 
-  console.log("cardData", cardData);
+  // console.log("cardData", cardData);
   return (
     <FormSection dataPhase="credit-card" formTitle={"付款資訊"}>
       <div className="col col-12">
@@ -52,7 +54,7 @@ function Step3Payment() {
         </div>
         <div className="input-group input-w-lg-3 input-w-sm-s3">
           <InputField
-            name="CVC"
+            name="cvc"
             label="CVC / CCV"
             type="text"
             value={cardData.CVC}
