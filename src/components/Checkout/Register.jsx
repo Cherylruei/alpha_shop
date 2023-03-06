@@ -3,6 +3,16 @@ import Step1Address from "./Step1Address";
 import Step2Delivery from "./Step2Delivery";
 import Step3Payment from "./Step3Payment";
 
+// 使用named export 給 step1/step2/step3 共用
+export function FormSection({ dataPhase, formTitle, children }) {
+  return (
+    <form className="col col-12" data-phase={dataPhase}>
+      <h3 className="form-title">{formTitle}</h3>
+      <section className="form-body col col-12">{children}</section>
+    </form>
+  );
+}
+
 function Register({ phase, number, onManageRadio }) {
   return (
     <section

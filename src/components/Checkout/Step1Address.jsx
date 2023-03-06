@@ -1,15 +1,7 @@
 import { v4 as uuidv4 } from "uuid";
+import { FormSection } from './Register'
 import InputField from "./InputField";
 
-// 使用named export 給 step1/step2/step3 共用
-export function FormSection({ dataPhase, formTitle, children }) {
-  return (
-    <form className="col col-12" data-phase={dataPhase}>
-      <h3 className="form-title">{formTitle}</h3>
-      <section className="form-body col col-12">{children}</section>
-    </form>
-  );
-}
 
 function Step1Address() {
   const cities = [

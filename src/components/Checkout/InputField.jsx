@@ -9,8 +9,6 @@ function InputField({ value, label, name, placeholder, type, onChange }) {
         name={name}
         placeholder={placeholder}
         onChange={onChange}
-        // 目前沒有用到onChange 事件取值?
-        // The onchange event occurs when the value of an HTML element is changed.
       />
     </>
   );

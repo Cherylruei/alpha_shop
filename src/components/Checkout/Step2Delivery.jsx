@@ -1,4 +1,4 @@
-import { FormSection } from "./Step1Address";
+import { FormSection } from "./Register";
 
 function Shipping({ dataPrice, dataId, option, shippingDays, onManageRadio }) {
   return (

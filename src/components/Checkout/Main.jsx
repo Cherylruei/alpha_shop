@@ -4,12 +4,14 @@ import Cart from "../Cart/Cart.jsx";
 import ProgressControl from "./ProgressControl";
 import cartInitData from "../Cart/cart.json";
 import { DummyDataContext } from "../../context/CartContext";
+import { CardDataContext, creditCardInfo } from "../../context/DataContext";
 
 function Main() {
   const [shipping, setShipping] = useState("免費");
   const [cartProducts, setCartProducts] = useState(cartInitData);
   const [phase, setPhase] = useState("address");
   const [number, setNumber] = useState(1);
+  const [cardData, setCardData] = useState(creditCardInfo);
 
   const handleRadioChange = (price) => {
     setShipping(price);
@@ -52,22 +54,24 @@ function Main() {
   return (
     <main className="site-main">
       <div className="main-container">
-        <Register
-          onManageRadio={handleRadioChange}
-          // phase={phase}
-          number={number}
-        />
-        {/* Register 裡有 Step 2 Delivery 需要確認是否要計算運費, radio (onClick) */}
-        <DummyDataContext.Provider value={cartProducts}>
-          <Cart shipping={shipping} onManageQty={handleQuantityChange} />
-        </DummyDataContext.Provider>
-        {/* Cart 的購物車金額加上運費 button(onClick)*/}
-        <ProgressControl
-          phase={phase}
-          number={number}
-          onClick={handlePhaseClick}
-        />
-        {/* 會記錄不同階段 step 1/2/3 將相對應的prop傳到 register */}
+        <CardDataContext.Provider value={{ cardData, setCardData }}>
+          <Register
+            onManageRadio={handleRadioChange}
+            // phase={phase}
+            number={number}
+          />
+          {/* Register 裡有 Step 2 Delivery 需要確認是否要計算運費, radio (onClick) */}
+          <DummyDataContext.Provider value={cartProducts}>
+            <Cart shipping={shipping} onManageQty={handleQuantityChange} />
+          </DummyDataContext.Provider>
+          {/* Cart 的購物車金額加上運費 button(onClick)*/}
+          <ProgressControl
+            phase={phase}
+            number={number}
+            onClick={handlePhaseClick}
+          />
+          {/* 會記錄不同階段 step 1/2/3 將相對應的prop傳到 register */}
+        </CardDataContext.Provider>
       </div>
     </main>
   );
